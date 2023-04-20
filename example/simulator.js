@@ -25,7 +25,7 @@ if ( args.variable === undefined ) {
 
 // default parameters
 var cadence = 90;
-var power = 100;
+var power = 450;
 var powerMeterSpeed = 18;  // kmh
 var powerMeterSpeedUnit = 2048;	 // Last Event time expressed in Unit of 1/2048 second
 var runningCadence = 180;
@@ -327,4 +327,6 @@ if ( containsCSP && containsPWR && !containsCAD && !containsSPD ) { notifyPowerC
 if ( containsCSP && containsPWR &&  containsCAD && !containsSPD ) { notifyCadenceCSP(); }	// Simulate Cycling Power Service  - Broadcasting Power and Cadence
 if ( containsCSP && containsPWR &&  containsCAD &&  containsSPD ) { notifyCPCS(); }			// Simulate Cycling Power Service - Broadcasting Power and Cadence and Speed
 if ( containsFTMS ) { notifyPowerFTMS(); } 													// Simulate FTMS Smart Trainer - Broadcasting Power and Cadence
-if ( containsRSC  ) { notifyRSC(); }														// Simulate Running Speed and Cadence - Broadcasting Speed and Cadence
+if ( containsRSC  ) { notifyRSC(); }	
+npm run simulator -- --variable=ftms --variable=rsc --variable=csp --variable=power --variable=cadence --variable=speed// Simulate Running Speed and Cadence - Broadcasting Speed and Cadence
+
